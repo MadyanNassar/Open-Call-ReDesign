@@ -4,65 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script
-    src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
-    type="text/javascript"
-  ></script>
-    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script defer src="script.js"></script>
     <title>Document</title>
 </head>
 <body>
-    
-<ul class="timeline">
-    <li class="bar"></li>
-  </ul>
-  <div class="container">
-    <section data-name="Home">
-      <h1>Home</h1>
-      <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
-      </p>    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
-      </p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
-      </p>
-    </section>
-    <section data-name="Profile">
-      
-      <h1>Profile</h1>
-      <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
-      <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Placeholder&w=1800&h=600" alt="" />
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
-      </p>
-      <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
-      <br>
-      <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Placeholder&w=1800&h=600" alt="" />
-      </p><h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
-      </p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
-      </p><h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h1>
-    </section>
-    <section data-name="Works">
-      <h1>Works</h1>
-      <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
-      </p>
-    </section>
-    <section data-name="Esperiments">
-      <h1>Experiments</h1>
-      <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </p>
-    </section>
-    <section data-name="About">
-      <h1>About</h1>
-      <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </p>
-    </section>
-    <section data-name="Contact">
-      <h1>Contact</h1>
-      <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </p>
-    </section>
+  <div class="content">
+    <div class="head"></div>
+    <div class="body-container">
+      <ul class="timeline">
+        <li  class="bar draggable"></li>
+      </ul>
+      <div class="container">
+        <section data-name="Home">
+          <h1>Home</h1>
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
+          </p>    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
+          </p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
+          </p>
+        </section>
+        <section data-name="Profile">
+          
+          <h1>Profile</h1>
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
+          <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Placeholder&w=1800&h=600" alt="" />
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
+          </p>
+          <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
+          <br>
+          <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Placeholder&w=1800&h=600" alt="" />
+          </p><h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
+          </p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
+          </p><h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h1>
+        </section>
+        <section data-name="Works">
+          <h1>Works</h1>
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
+          </p>
+        </section>
+        <section data-name="Test">
+            <h1>Works</h1>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima exercitationem earum beatae assumenda debitis quibusdam, ducimus autem a ab nisi, praesentium et enim numquam consequatur similique quis consectetur consequuntur iure!
+            </p>
+          </section>
+        <section data-name="Esperiments">
+          <h1>Experiments</h1>
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </section>
+        <section data-name="About">
+          <h1>About</h1>
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </section>
+        <section data-name="Contact">
+          <h1>Contact</h1>
+          <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate porro odit esse ut quidem deleniti dolore doloremque aliquam neque ad at optio odio quasi aperiam necessitatibus reiciendis, quaerat quod autem.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </section>
+      </div>
+    </div>
+
+
   </div>
+
 </body>
 </html>
