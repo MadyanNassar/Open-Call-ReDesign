@@ -1,7 +1,4 @@
 $(function () {
-  function sumSection() {
-    return $(".content").height();
-  }
   function setDimensionBar() {
     $(".bar").css({
       // height: ($(window).height() / sumSection()) * 100 + "%",
@@ -68,7 +65,6 @@ $(function () {
     $(".bar").css({
       top: top + "%",
       height: 100 - top + "%",
-      // height: (100 - (100 - top)) + "%",
     });
 
     if (scroll >= container.offset().top - 10) {

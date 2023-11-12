@@ -1,5 +1,3 @@
-
-
 /* back-ground & logo */
 .back-ground {
   height: 100vh;
@@ -98,10 +96,7 @@
   justify-content: space-around;
 }
 
-
 /* body styling */
-
-
 
 #canvas {
   position: absolute;
@@ -113,4 +108,3 @@
   width: 100%;
   height: 100%;
 }
-
