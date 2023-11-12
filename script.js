@@ -1,30 +1,28 @@
 $(function () {
-  var main = $(".container");
-  var t = main.offset().top;
-
-  $(".draggable").draggable({
-    containment: "timeline",
-    axis: "y",
-    cursor: "pointer",
-    revert: false,
-  });
-  $("ul, li").disableSelection();
-
   function sumSection() {
     return $(".content").height();
   }
   function setDimensionBar() {
     $(".bar").css({
-      height: ($(window).height() / sumSection()) * 100 + "%",
+      // height: ($(window).height() / sumSection()) * 100 + "%",
+      // height: (100 - $(this).top) + "%",
     });
   }
   function setSection() {
     $.each($("section"), function (i, element) {
       $(element).css({
-        "min-height": $(window).height(),
+        "min-height": $(window).height() / 2,
       });
     });
   }
+
+  // $(".node").hover(function (e) {
+  //   $(this)
+  //   $(this).css(
+  //     "background-color",
+  //     e.type === "mouseenter" ? "red" : "transparent"
+  //   );
+  // });
 
   function addBehaviours() {
     let sections = $("section");
@@ -54,7 +52,7 @@ $(function () {
 
       $(node).css({
         top:
-          ($(".timeline").height() / $(document).height()) *
+          ($(".timeline").height() / $(".container").height()) *
           $(element).offset().top,
       });
     });
@@ -62,30 +60,17 @@ $(function () {
   }
 
   $(window).on("scroll", function () {
-    let top = (window.scrollY / sumSection()) * 100;
-    $(".bar").css({
-      top: top + "%",
-    });
+    let top = (window.scrollY / $(".container").height()) * 100;
 
-    // console.log($(".bar").offset().top);
-  });
-
-  $(".draggable").on("drag", function () {
-    // window.scrollTo(0, $(".bar").offset().top) ;
-
-    // $('html, body').animate({
-    //   scrollTop: scroll },
-    // 500);
-
-    console.log($(".bar").offset().top);
-  });
-
-  $(window).scroll(function () {
     var scroll = $(window).scrollTop();
     var timeline = $(".timeline");
-    console.log(scroll + "--");
     var container = $(".container");
-    console.log(timeline.offset().top);
+    $(".bar").css({
+      top: top + "%",
+      height: 100 - top + "%",
+      // height: (100 - (100 - top)) + "%",
+    });
+
     if (scroll >= container.offset().top - 10) {
       timeline.addClass("fixed");
     } else {
@@ -104,4 +89,8 @@ $(function () {
     arrangeNodes();
     setDimensionBar();
   }, 200);
+});
+
+$(document).ready(function () {
+  $(this).scrollTop(0);
 });
