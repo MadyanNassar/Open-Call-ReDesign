@@ -7,34 +7,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2/tsparticles.engine.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic@2/tsparticles.basic.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-move-base@2/tsparticles.move.base.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-circle@2/tsparticles.shape.circle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-color@2/tsparticles.updater.color.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-opacity@2/tsparticles.updater.opacity.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-out-modes@2/tsparticles.updater.out-modes.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-updater-size@2/tsparticles.updater.size.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-stars@2/tsparticles.preset.stars.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-stars@2/tsparticles.preset.stars.bundle.min.js"></script> -->
-
-    <!-- tsParticles div, not required, but it's recommended -->
     <div id="tsparticles"></div>
-    <!-- https://github.com/matteobruni/tsparticles -->
-    <!-- https://www.jsdelivr.com/package/npm/tsparticles-slim -->
-    <!-- The bundle file contains all the necessary scripts for the slim version, instead of manually including them all -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>
-    <!-- https://www.jsdelivr.com/package/npm/tsparticles -->
-    <!-- The bundle file contains all the necessary scripts for the full version, instead of manually including them all -->
-    <!--<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.0.6/tsparticles.bundle.min.js"></script>-->
-
+    <script src="three.js"></script>
+    <script src="addon.js"></script>
+    <script src="tweenMax.js"></script>
+    <script src="bas.js"></script>
+    <script defer src="three_scripts.js"></script>
     <script defer src="script.js"></script>
     <script defer src="script_1.js"></script>
     <title>Document</title>
   </head>
   <body>
     <div class="content">
-      <div class="head"></div>
+      <div class="head">
+        <div id="three-container"></div>
+      </div>
       <div class="body-container">
         <ul class="timeline">
           <li class="bar"></li>
