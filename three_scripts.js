@@ -78,7 +78,7 @@ function init() {
       }
 
       var tl = new TimelineMax({
-        repeat: 0, // -1 = infinity
+        repeat: -1, // -1 = infinity
         repeatDelay: 0.5,
         yoyo: true,
       });
@@ -747,21 +747,21 @@ var utils = {
 
 function createTweenScrubber(tween, seekSpeed) {
   seekSpeed = seekSpeed || 0.001;
-  var lastScrollTop = 0;
-  var div = document.getElementsByClassName("head")[0];
-  let isScrolling = false;
-  window.onscroll = () => (isScrolling = true);
+  // var lastScrollTop = 0;
+  // var div = document.getElementsByClassName("head")[0];
+  // let isScrolling = false;
+  // window.onscroll = () => (isScrolling = true);
 
-  if (div.getBoundingClientRect().top <= 0) {
-    console.log("test");
-  }
+  // if (div.getBoundingClientRect().top <= 0) {
+  //   console.log("test");
+  // }
 
-  setInterval(() => {
-    if (isScrolling) {
-      isScrolling = false;
-      console.log("Someone scrolled me!");
-    }
-  }, 10);
+  // setInterval(() => {
+  //   if (isScrolling) {
+  //     isScrolling = false;
+  //     console.log("Someone scrolled me!");
+  //   }
+  // }, 10);
 
   function stop() {
     TweenMax.to(tween, 1, {
@@ -808,28 +808,28 @@ function createTweenScrubber(tween, seekSpeed) {
     }
   });
 
-  if (!isScrolling) {
-    stop();
-  }
+  // if (!isScrolling) {
+  //   stop();
+  // }
 
-  window.addEventListener(
-    "scroll",
-    function () {
-      var st = window.pageYOffset || document.documentElement.scrollTop;
-      if (st > lastScrollTop && isScrolling) {
-        var cy = div.getBoundingClientRect().top;
-        var dx = _cx - cy;
-        _cx = cy;
-        seek(dx);
-      } else if (st < lastScrollTop && isScrolling) {
-        var cy = div.getBoundingClientRect().top;
-        var dx = cy - _cx;
-        _cx = cy;
-        seek(dx);
-      }
-    },
-    false
-  );
+  // window.addEventListener(
+  //   "scroll",
+  //   function () {
+  //     var st = window.pageYOffset || document.documentElement.scrollTop;
+  //     if (st > lastScrollTop && isScrolling) {
+  //       var cy = div.getBoundingClientRect().top;
+  //       var dx = _cx - cy;
+  //       _cx = cy;
+  //       seek(dx);
+  //     } else if (st < lastScrollTop && isScrolling) {
+  //       var cy = div.getBoundingClientRect().top;
+  //       var dx = cy - _cx;
+  //       _cx = cy;
+  //       seek(dx);
+  //     }
+  //   },
+  //   false
+  // );
 
   // mobile
   window.addEventListener("touchstart", function (e) {
