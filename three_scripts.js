@@ -78,7 +78,7 @@ function init() {
       }
 
       var tl = new TimelineMax({
-        repeat: -1, // -1 = infinity
+        repeat: 0, // -1 = infinity
         repeatDelay: 0.5,
         yoyo: true,
       });
@@ -101,7 +101,7 @@ function init() {
         0
       );
       tl.add(lightTl, 0);
-      // tl.reverse(3);
+      tl.reverse(3);
 
       // tl.timeScale(0.1)
 
@@ -747,6 +747,21 @@ var utils = {
 
 function createTweenScrubber(tween, seekSpeed) {
   seekSpeed = seekSpeed || 0.001;
+  var lastScrollTop = 0;
+  var div = document.getElementsByClassName("head")[0];
+  let isScrolling = false;
+  window.onscroll = () => (isScrolling = true);
+
+  if (div.getBoundingClientRect().top <= 0) {
+    console.log("test");
+  }
+
+  setInterval(() => {
+    if (isScrolling) {
+      isScrolling = false;
+      console.log("Someone scrolled me!");
+    }
+  }, 10);
 
   function stop() {
     TweenMax.to(tween, 1, {
@@ -789,10 +804,33 @@ function createTweenScrubber(tween, seekSpeed) {
       var cx = e.clientX;
       var dx = cx - _cx;
       _cx = cx;
-
       seek(dx);
     }
   });
+
+  if (!isScrolling) {
+    stop();
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop && isScrolling) {
+        var cy = div.getBoundingClientRect().top;
+        var dx = _cx - cy;
+        _cx = cy;
+        seek(dx);
+      } else if (st < lastScrollTop && isScrolling) {
+        var cy = div.getBoundingClientRect().top;
+        var dx = cy - _cx;
+        _cx = cy;
+        seek(dx);
+      }
+    },
+    false
+  );
+
   // mobile
   window.addEventListener("touchstart", function (e) {
     _cx = e.touches[0].clientX;
@@ -811,6 +849,10 @@ function createTweenScrubber(tween, seekSpeed) {
     seek(dx);
     e.preventDefault();
   });
+
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   console.log("OK");
+  // });
 }
 // document.addEventListener("DOMContentLoaded", () => {
 
