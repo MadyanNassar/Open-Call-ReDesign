@@ -8,7 +8,7 @@ $(function () {
   function setSection() {
     $.each($("section"), function (i, element) {
       $(element).css({
-        "min-height": $(window).height() / 2,
+        "min-height": $(window).height() * 2,
       });
     });
   }
@@ -61,13 +61,13 @@ $(function () {
 
     var scroll = $(window).scrollTop();
     var timeline = $(".timeline");
-    var container = $(".container");
+    var container = $(".body-container");
     $(".bar").css({
       top: top + "%",
       height: 100 - top + "%",
     });
 
-    if (scroll >= container.offset().top - 10) {
+    if (scroll >= container.offset().top - 15) {
       timeline.addClass("fixed");
     } else {
       timeline.removeClass("fixed");
@@ -75,13 +75,13 @@ $(function () {
   });
 
   $(window).on("resize", function () {
-    setSection();
+    // setSection();
     arrangeNodes();
     setDimensionBar();
   });
 
   setTimeout(function () {
-    setSection();
+    // setSection();
     arrangeNodes();
     setDimensionBar();
   }, 200);
