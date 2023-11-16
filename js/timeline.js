@@ -27,6 +27,9 @@ $(function () {
       $(element).on("click", function (e) {
         e.preventDefault();
         let scroll = $(sections[i]).offset().top;
+        console.log($(sections[i]).offset().top);
+        // console.log( $(('section' sections[i])).offset().top);
+
         $("html, body").animate(
           {
             scrollTop: scroll,
@@ -56,24 +59,6 @@ $(function () {
     addBehaviours();
   }
 
-  $(window).on("scroll", function () {
-    let top = (window.scrollY / $(".container").height()) * 100;
-
-    var scroll = $(window).scrollTop();
-    var timeline = $(".timeline");
-    var container = $(".body-container");
-    $(".bar").css({
-      top: top + "%",
-      height: 100 - top + "%",
-    });
-
-    if (scroll >= container.offset().top - 15) {
-      timeline.addClass("fixed");
-    } else {
-      timeline.removeClass("fixed");
-    }
-  });
-
   $(window).on("resize", function () {
     // setSection();
     arrangeNodes();
@@ -89,4 +74,22 @@ $(function () {
 
 $(document).ready(function () {
   $(this).scrollTop(0);
+});
+
+$(window).on("scroll", function () {
+  let top = (window.scrollY / $(".content").height()) * 100;
+
+  var scroll = $(window).scrollTop();
+  var timeline = $(".timeline");
+  var container = $(".body-container");
+  $(".bar").css({
+    top: top + "%",
+    height: 100 - top + "%",
+  });
+
+  if (scroll >= container.offset().top - 15) {
+    timeline.addClass("fixed");
+  } else {
+    timeline.removeClass("fixed");
+  }
 });

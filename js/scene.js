@@ -38,7 +38,6 @@ export default class Sketch {
     this.renderer.sortObjects = false;
 
     this.renderer.outputEncoding = THREE.sRGBEncoding;
-
     this.container = document.getElementById("container");
     this.container.appendChild(this.renderer.domElement);
 

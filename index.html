@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>OPEN CALL</title>
-    <meta
-      name="description"
-      content="OPEN CALL"
-    />
+    <meta name="description" content="OPEN CALL" />
     <meta
       name="keywords"
       content="three.js, webgl, hover, image, effect, website, web development"
@@ -18,8 +15,8 @@
     <!-- <link rel="stylesheet" href="https://use.typekit.net/yae0eed.css" /> -->
     <!-- <link rel="stylesheet" type="text/css" href="css/base.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/base.css" />
-    <script src="js/script.js"></script>
-    <script src="js/timeline.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/timeline.js"></script>
     <script>
       document.documentElement.className = "js";
       var supportsCssVars = function () {
@@ -45,12 +42,13 @@
   </head>
 
   <body class="loading">
+    <!-- <div class="timeline-wrapper"> -->
+    <ul class="timeline">
+      <li class="bar"></li>
+    </ul>
+    <!-- </div> -->
     <main>
-      <ul class="timeline">
-        <li class="bar"></li>
-      </ul>
-
-      <div data-scroll class="content">
+      <div class="mn" data-scroll>
         <div class="item head">
           <div class="item__image">
             <img
@@ -60,399 +58,406 @@
             />
           </div>
           <div class="item__image">
-            <img
-              src="img/logo.png"
-              class="js-image"
-              alt="Some image"
-            />
+            <img src="img/logo.png" class="js-image" alt="Some image" />
           </div>
         </div>
-        <div class="body-container">
-          <div class="section spaced container">
-            <section data-name="open-call">
-              <div class="open-call">
-                with the open call
-                <span class="space-ship">"Spaceship Earth"</span>
-                <br />
-                we invite artists, designers, scientists, writers and visual
-                storytellers to imagine the most daring, most promising, most
-                inspiring new ideas about the changing relationship between
-                humans, nature and technology.
-              </div>
-              <div class="open-call reveal fade-bottom">
-                Thought-provoking ideas that demonstrate a clear link to either
-                the biosphere, the technosphere or the mindsphere.
-              </div>
-              <div class="open-call reveal fade-bottom">
-                Unconventional ways, yet tangible experiences that invite the
-                audience to discover, unfold and engage with the next stages of
-                evolution; the project must include an interactive component in
-                which the audience can discover, learn and grow in their own
-                personal ways.
-              </div>
-              <div class="open-call reveal fade-bottom">
-                Innovating projects that apply methods, approaches or tools from
-                (speculative) design and (bio)technology; machine learning;
-                synthetic biology; biomimicry; robotics
-              </div>
-            </section>
 
-            <section data-name="WHO CAN">
-              <h2 class="reveal fade-bottom">WHO CAN</h2>
-              <p class="text reveal fade-bottom">
-                Artists, designers, and visual storyteller with keen interest in
-                socio-cultural implications of technology, who graduated in the
-                field of art or design (at either the master's or bachelor's
-                level). You can participate individually, or with other. The
-                development fee will stay the same (25.000 euros), regardless of
-                the amount of creatives in your team. Both EU and non-EU citizen
-                may submit an application. For non-EU citizens it is necessary
-                to take travel expenses, visa rules and COVID-19 regulations
-                into consideration as they need to be covered from the budget or
-                otherwise taken care of by themselves.
-              </p>
-            </section>
-
-            <section data-name="WHAT TO">
-              <h2 class="reveal fade-bottom">WHAT TO</h2>
-              <p class="text reveal fade-bottom">
-                Each participant can submit only one application for this call.
-                The application consist of:
-              </p>
-              <p class="text text-left reveal fade-bottom">
-                - Completed & signed application form including project idea.
-              </p>
-              <p class="text text-left reveal fade-bottom">
-                - Curriculum Viate (CV).
-              </p>
-              <p class="text text-left reveal fade-bottom">
-                - Portfolio of previous work (max 20 slides).
-              </p>
-            </section>
-
-            <section data-name="UPLOAD">
-              <h2 class="reveal fade-bottom">UPLOAD</h2>
-              <p class="text reveal fade-bottom">
-                Upload PDF files of your completed application form, your CV and
-                portfolio You can convert Word documents with a PDF converter
-                The maximum file size for each of these individual files cannot
-                be exceed 4MB.
-              </p>
-              <p class="text reveal fade-bottom">
-                If you did not receive a confirmation by email (even though on
-                the website it state your application was successful), it's
-                likely an error occurred. If so, please contact us via
-                opencall@nextnature.net.
-              </p>
-              <p class="text reveal fade-bottom">
-                Development fee Four candidates / teams will be selected and
-                receive a development fee of €25.000 each.
-              </p>
-            </section>
-
-            <section data-name="TIMETABLE">
-              <h2 class="reveal fade-bottom">TIMETABLE</h2>
-              <h3 class="year reveal fade-bottom">2023</h3>
-              <div class="list-container">
-                <div class="row reveal fade-right">
-                  <div class="empty"></div>
-                  <p class="box-calender">APRIL</p>
-                  <hr class="box-line" />
-                  <p class="box-calender calender-decs">
-                    DeadLine - Submit your idea
-                  </p>
+        <div class="content">
+          <div class="body-container">
+            <div class="section spaced container">
+              <section data-name="open-call">
+                <div class="open-call">
+                  with the open call
+                  <span class="space-ship">"Spaceship Earth"</span>
+                  <br />
+                  we invite artists, designers, scientists, writers and visual
+                  storytellers to imagine the most daring, most promising, most
+                  inspiring new ideas about the changing relationship between
+                  humans, nature and technology.
                 </div>
-                <div class="row reveal fade-left">
-                  <p class="box-calender calender-decs">
-                    Selected ideas will be announced
-                  </p>
-                  <hr class="box-line" />
-                  <p class="box-calender">MAY</p>
-                  <div class="empty"></div>
+                <div class="open-call reveal fade-bottom">
+                  Thought-provoking ideas that demonstrate a clear link to
+                  either the biosphere, the technosphere or the mindsphere.
                 </div>
-                <div class="row reveal fade-right">
-                  <div class="empty"></div>
-                  <p class="box-calender">JUNE</p>
-                  <hr class="box-line" />
-                  <p class="box-calender calender-decs">KickOff event</p>
+                <div class="open-call reveal fade-bottom">
+                  Unconventional ways, yet tangible experiences that invite the
+                  audience to discover, unfold and engage with the next stages
+                  of evolution; the project must include an interactive
+                  component in which the audience can discover, learn and grow
+                  in their own personal ways.
                 </div>
-
-                <div class="row reveal fade-left">
-                  <p class="box-calender calender-decs">First feedback round</p>
-                  <hr class="box-line" />
-                  <p class="box-calender">SEPTEMBER</p>
-                  <div class="empty"></div>
+                <div class="open-call reveal fade-bottom">
+                  Innovating projects that apply methods, approaches or tools
+                  from (speculative) design and (bio)technology; machine
+                  learning; synthetic biology; biomimicry; robotics
                 </div>
+              </section>
 
-                <div class="row reveal fade-left">
-                  <p class="box-calender calender-decs">
-                    Second feedback round
-                  </p>
-                  <hr class="box-line" />
-                  <p class="box-calender">DECEMBER</p>
-                  <div class="empty"></div>
+              <section data-name="WHO CAN">
+                <h2 class="reveal fade-bottom">WHO CAN</h2>
+                <p class="text reveal fade-bottom">
+                  Artists, designers, and visual storyteller with keen interest
+                  in socio-cultural implications of technology, who graduated in
+                  the field of art or design (at either the master's or
+                  bachelor's level). You can participate individually, or with
+                  other. The development fee will stay the same (25.000 euros),
+                  regardless of the amount of creatives in your team. Both EU
+                  and non-EU citizen may submit an application. For non-EU
+                  citizens it is necessary to take travel expenses, visa rules
+                  and COVID-19 regulations into consideration as they need to be
+                  covered from the budget or otherwise taken care of by
+                  themselves.
+                </p>
+              </section>
+
+              <section data-name="WHAT TO">
+                <h2 class="reveal fade-bottom">WHAT TO</h2>
+                <p class="text reveal fade-bottom">
+                  Each participant can submit only one application for this
+                  call. The application consist of:
+                </p>
+                <p class="text text-left reveal fade-bottom">
+                  - Completed & signed application form including project idea.
+                </p>
+                <p class="text text-left reveal fade-bottom">
+                  - Curriculum Viate (CV).
+                </p>
+                <p class="text text-left reveal fade-bottom">
+                  - Portfolio of previous work (max 20 slides).
+                </p>
+              </section>
+
+              <section data-name="UPLOAD">
+                <h2 class="reveal fade-bottom">UPLOAD</h2>
+                <p class="text reveal fade-bottom">
+                  Upload PDF files of your completed application form, your CV
+                  and portfolio You can convert Word documents with a PDF
+                  converter The maximum file size for each of these individual
+                  files cannot be exceed 4MB.
+                </p>
+                <p class="text reveal fade-bottom">
+                  If you did not receive a confirmation by email (even though on
+                  the website it state your application was successful), it's
+                  likely an error occurred. If so, please contact us via
+                  opencall@nextnature.net.
+                </p>
+                <p class="text reveal fade-bottom">
+                  Development fee Four candidates / teams will be selected and
+                  receive a development fee of €25.000 each.
+                </p>
+              </section>
+
+              <section data-name="TIMETABLE">
+                <h2 class="reveal fade-bottom">TIMETABLE</h2>
+                <h3 class="year reveal fade-bottom">2023</h3>
+                <div class="list-container">
+                  <div class="row reveal fade-right">
+                    <div class="empty"></div>
+                    <p class="box-calender">APRIL</p>
+                    <hr class="box-line" />
+                    <p class="box-calender calender-decs">
+                      DeadLine - Submit your idea
+                    </p>
+                  </div>
+                  <div class="row reveal fade-left">
+                    <p class="box-calender calender-decs">
+                      Selected ideas will be announced
+                    </p>
+                    <hr class="box-line" />
+                    <p class="box-calender">MAY</p>
+                    <div class="empty"></div>
+                  </div>
+                  <div class="row reveal fade-right">
+                    <div class="empty"></div>
+                    <p class="box-calender">JUNE</p>
+                    <hr class="box-line" />
+                    <p class="box-calender calender-decs">KickOff event</p>
+                  </div>
+
+                  <div class="row reveal fade-left">
+                    <p class="box-calender calender-decs">
+                      First feedback round
+                    </p>
+                    <hr class="box-line" />
+                    <p class="box-calender">SEPTEMBER</p>
+                    <div class="empty"></div>
+                  </div>
+
+                  <div class="row reveal fade-left">
+                    <p class="box-calender calender-decs">
+                      Second feedback round
+                    </p>
+                    <hr class="box-line" />
+                    <p class="box-calender">DECEMBER</p>
+                    <div class="empty"></div>
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
 
-            <section data-name="JURY">
-              <h2 class="reveal fade-bottom">JURY</h2>
-              <p class="text reveal fade-bottom">
-                From all submisions, a selection committe of Next Nature will
-                preselect 16 projects that demonstrate a clear link to Spaceship
-                Earth. The selection committe will take into consideration the
-                relevance to the theme, the potential for interaction with an
-                audience, and application of technology.
-              </p>
+              <section data-name="JURY">
+                <h2 class="reveal fade-bottom">JURY</h2>
+                <p class="text reveal fade-bottom">
+                  From all submisions, a selection committe of Next Nature will
+                  preselect 16 projects that demonstrate a clear link to
+                  Spaceship Earth. The selection committe will take into
+                  consideration the relevance to the theme, the potential for
+                  interaction with an audience, and application of technology.
+                </p>
 
-              <p
-                style="margin-left: 1.5rem"
-                class="text jury-sub-title reveal fade-bottom"
-              >
-                The jury consist of :
-              </p>
-              <p class="text text-left reveal fade-bottom">
-                - Rob van Hatuum
-                <span class="jury-desc"
-                  >(chair) Chief Science Officer NEMO, VPRO TV maker</span
+                <p
+                  style="margin-left: 1.5rem"
+                  class="text jury-sub-title reveal fade-bottom"
                 >
-              </p>
+                  The jury consist of :
+                </p>
+                <p class="text text-left reveal fade-bottom">
+                  - Rob van Hatuum
+                  <span class="jury-desc"
+                    >(chair) Chief Science Officer NEMO, VPRO TV maker</span
+                  >
+                </p>
 
-              <p class="text text-left reveal fade-bottom">
-                - Caroline Breunesse
-                <span class="jury-desc">Director of Exhibitions Naturalis</span>
-              </p>
+                <p class="text text-left reveal fade-bottom">
+                  - Caroline Breunesse
+                  <span class="jury-desc"
+                    >Director of Exhibitions Naturalis</span
+                  >
+                </p>
 
-              <p class="text text-left reveal fade-bottom">
-                - Lin-Lin Chen
-                <span class="jury-desc">
-                  Design Professor and Dean Industrial Design Dept./ TU
-                  Eindhoven.</span
-                >
-              </p>
-            </section>
+                <p class="text text-left reveal fade-bottom">
+                  - Lin-Lin Chen
+                  <span class="jury-desc">
+                    Design Professor and Dean Industrial Design Dept./ TU
+                    Eindhoven.</span
+                  >
+                </p>
+              </section>
 
-            <section data-name="SPECIAL">
-              <h2 class="reveal fade-bottom">SPECIAL</h2>
-              <p class="text reveal fade-bottom">
-                Special conditions that apply to the award :
-              </p>
-              <p class="text reveal fade-bottom">
-                The development fee of €25.000, combined with the timeframe of 6
-                months, is sufficient to realize a first prototype of the
-                project> If the prototype is successful, we continue to project
-                into final realization. Emerging (bio)technology must not be
-                crucial for the realization of the project. Backup solutions
-                should be available.
-              </p>
-            </section>
+              <section data-name="SPECIAL">
+                <h2 class="reveal fade-bottom">SPECIAL</h2>
+                <p class="text reveal fade-bottom">
+                  Special conditions that apply to the award :
+                </p>
+                <p class="text reveal fade-bottom">
+                  The development fee of €25.000, combined with the timeframe of
+                  6 months, is sufficient to realize a first prototype of the
+                  project> If the prototype is successful, we continue to
+                  project into final realization. Emerging (bio)technology must
+                  not be crucial for the realization of the project. Backup
+                  solutions should be available.
+                </p>
+              </section>
 
-            <section data-name="IF SELECTED">
-              <h2 class="reveal fade-bottom">IF SELECTED</h2>
-              <p class="text reveal fade-bottom">
-                The designer/artist is available for the kickoff event in June
-                2023. Physical presence is not mandatory. The designer/artist is
-                available for the first feedback round that takes place in
-                September 2023. Physical presence is not mandatory. The
-                designer/artist is available for the second feedback that takes
-                place in November 2023, followed by demonstration of the
-                prototype during a public event. Physical presence is mandatory,
-                at the expense of the project. Any visa requirements are to be
-                dealt with by the designer/artist.
-              </p>
-            </section>
+              <section data-name="IF SELECTED">
+                <h2 class="reveal fade-bottom">IF SELECTED</h2>
+                <p class="text reveal fade-bottom">
+                  The designer/artist is available for the kickoff event in June
+                  2023. Physical presence is not mandatory. The designer/artist
+                  is available for the first feedback round that takes place in
+                  September 2023. Physical presence is not mandatory. The
+                  designer/artist is available for the second feedback that
+                  takes place in November 2023, followed by demonstration of the
+                  prototype during a public event. Physical presence is
+                  mandatory, at the expense of the project. Any visa
+                  requirements are to be dealt with by the designer/artist.
+                </p>
+              </section>
 
-            <section data-name="DEADLINE">
-              <h2 class="reveal fade-bottom">DEADLINE</h2>
-              <p class="text deadline-text reveal fade-bottom">
-                Friday 31 March 2023 (deadline 23.59 CET)
-              </p>
-            </section>
+              <section data-name="DEADLINE">
+                <h2 class="reveal fade-bottom">DEADLINE</h2>
+                <p class="text deadline-text reveal fade-bottom">
+                  Friday 31 March 2023 (deadline 23.59 CET)
+                </p>
+              </section>
 
-            <section data-name="OBJECTIVES">
-              <h2 class="reveal fade-bottom">OBJECTIVES</h2>
-              <p class="text reveal fade-bottom">
-                This open call aims to simulate artists, designers, scientists,
-                writers and visual storyteller to imagine the most daring, most
-                promising, most inspiring new ideas about the changing
-                relationship between humans, nature, and technology. We
-                challenge them to dream of a more inclusive and sustainable
-                world. A world in which biology and technology merge. A world in
-                which humans and planet enter a new evolutionary phase. A world
-                woth living in.
-              </p>
-            </section>
+              <section data-name="OBJECTIVES">
+                <h2 class="reveal fade-bottom">OBJECTIVES</h2>
+                <p class="text reveal fade-bottom">
+                  This open call aims to simulate artists, designers,
+                  scientists, writers and visual storyteller to imagine the most
+                  daring, most promising, most inspiring new ideas about the
+                  changing relationship between humans, nature, and technology.
+                  We challenge them to dream of a more inclusive and sustainable
+                  world. A world in which biology and technology merge. A world
+                  in which humans and planet enter a new evolutionary phase. A
+                  world woth living in.
+                </p>
+              </section>
 
-            <section data-name="FORM">
-              <div class="contact-us reveal fade-bottom">
-                <form action="#">
-                  <h2 style="color: white">Application Form</h2>
-                  <div class="form-section">
-                    <label for="firstName">First Name<em>&#x2a;</em></label>
-                    <input
-                      id="firstName"
-                      name="firstName"
-                      required=""
-                      type="text"
-                    />
-
-                    <label for="lastName">Last Name<em>&#x2a;</em></label>
-                    <input
-                      id="lastName"
-                      name="lastName"
-                      required=""
-                      type="text"
-                    />
-
-                    <label for="nationality">Nationality<em>&#x2a;</em></label>
-                    <input
-                      id="nationality"
-                      name="nationality"
-                      required=""
-                      type="text"
-                    />
-
-                    <label for="age">Age<em>&#x2a;</em></label>
-                    <input id="age" name="age" required="" type="number" />
-
-                    <label for="email">Email Address<em>&#x2a;</em></label>
-                    <input id="email" name="email" required="" type="email" />
-                    <label for="phoneNo">Phone No.<em>&#x2a;</em></label>
-                    <input
-                      id="phoneNo"
-                      name="phoneNo"
-                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                      type="tel"
-                    />
-
-                    <div style="margin-top: 2.5rem">
-                      <label for="workTitle"
-                        >Working title of project idea<em>&#x2a;</em></label
-                      >
+              <section data-name="FORM">
+                <div class="contact-us reveal fade-bottom">
+                  <form action="#">
+                    <h2 style="color: white">Application Form</h2>
+                    <div class="form-section">
+                      <label for="firstName">First Name<em>&#x2a;</em></label>
                       <input
-                        id="workTitle"
-                        name="workTitle"
+                        id="firstName"
+                        name="firstName"
                         required=""
                         type="text"
                       />
-                      <label for="workDescription"
-                        >One-sentence description of the work
+
+                      <label for="lastName">Last Name<em>&#x2a;</em></label>
+                      <input
+                        id="lastName"
+                        name="lastName"
+                        required=""
+                        type="text"
+                      />
+
+                      <label for="nationality"
+                        >Nationality<em>&#x2a;</em></label
+                      >
+                      <input
+                        id="nationality"
+                        name="nationality"
+                        required=""
+                        type="text"
+                      />
+
+                      <label for="age">Age<em>&#x2a;</em></label>
+                      <input id="age" name="age" required="" type="number" />
+
+                      <label for="email">Email Address<em>&#x2a;</em></label>
+                      <input id="email" name="email" required="" type="email" />
+                      <label for="phoneNo">Phone No.<em>&#x2a;</em></label>
+                      <input
+                        id="phoneNo"
+                        name="phoneNo"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        type="tel"
+                      />
+
+                      <div style="margin-top: 2.5rem">
+                        <label for="workTitle"
+                          >Working title of project idea<em>&#x2a;</em></label
+                        >
+                        <input
+                          id="workTitle"
+                          name="workTitle"
+                          required=""
+                          type="text"
+                        />
+                        <label for="workDescription"
+                          >One-sentence description of the work
+                          <span>(150 charecters maximum)</span
+                          ><em>&#x2a;</em></label
+                        >
+                        <textarea
+                          id="workDescription"
+                          name="workDescription"
+                          required=""
+                          rows="4"
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    <div class="form-section">
+                      <h3>Project Details</h3>
+                      <label for="projectDetails"
+                        >Project description
+                        <span
+                          >(500 character maximum, please describe in detail of
+                          the proposed project sample)</span
+                        ><em>&#x2a;</em></label
+                      >
+                      <textarea
+                        id="projectDetails"
+                        name="projectDetails"
+                        required=""
+                        rows="4"
+                      ></textarea>
+                      <label for="projectMeaningful"
+                        >Why do you consider this project to be a meaningful
+                        project for Spaceship Earth?
+                        <span> (500 character maximum)</span
+                        ><em>&#x2a;</em></label
+                      >
+                      <textarea
+                        id="projectMeaningful"
+                        name="projectMeaningful"
+                        required=""
+                        rows="4"
+                      ></textarea>
+                      <label for="firstAim"
+                        >The first aim of this open call is to commission works
+                        that demonstrate a clear link to either the geosphere,
+                        the biosphere, the technosphere or the mindsphere. How
+                        does your proposal meet these requirements?
+                        <span>(500 character maximum)</span
+                        ><em>&#x2a;</em></label
+                      >
+                      <textarea
+                        id="firstAim"
+                        name="firstAim"
+                        required=""
+                        rows="4"
+                      ></textarea>
+                      <label for="secondAim"
+                        >The second aim of this open call is to commission
+                        unconventional ways, yet tangible experiences that
+                        invite the audience to discover, unfold and engage with
+                        the next stages of evolution; the project must include
+                        an interactive component in which the audience can
+                        discover, learn and grow in their own personal ways. How
+                        does your proposal meet these requirements?
                         <span>(150 charecters maximum)</span
                         ><em>&#x2a;</em></label
                       >
                       <textarea
-                        id="workDescription"
-                        name="workDescription"
+                        id="secondAim"
+                        name="secondAim"
+                        required=""
+                        rows="4"
+                      ></textarea>
+                      <label for="thirdAim"
+                        >The third aim of this open call is to commission
+                        innovative projects that apply methods, approaches or
+                        tools from (speculative) design and (bio)technology;
+                        machine learning; synthetic biology; biomimicry;
+                        robotics; etc. How does your proposal meet these
+                        requirements? <span> (500 character maximum)</span
+                        ><em>&#x2a;</em></label
+                      >
+                      <textarea
+                        id="thirdAim"
+                        name="thirdAim"
                         required=""
                         rows="4"
                       ></textarea>
                     </div>
-                  </div>
 
-                  <div class="form-section">
-                    <h3>Project Details</h3>
-                    <label for="projectDetails"
-                      >Project description
-                      <span
-                        >(500 character maximum, please describe in detail of
-                        the proposed project sample)</span
-                      ><em>&#x2a;</em></label
-                    >
-                    <textarea
-                      id="projectDetails"
-                      name="projectDetails"
-                      required=""
-                      rows="4"
-                    ></textarea>
-                    <label for="projectMeaningful"
-                      >Why do you consider this project to be a meaningful
-                      project for Spaceship Earth?
-                      <span> (500 character maximum)</span
-                      ><em>&#x2a;</em></label
-                    >
-                    <textarea
-                      id="projectMeaningful"
-                      name="projectMeaningful"
-                      required=""
-                      rows="4"
-                    ></textarea>
-                    <label for="firstAim"
-                      >The first aim of this open call is to commission works
-                      that demonstrate a clear link to either the geosphere, the
-                      biosphere, the technosphere or the mindsphere. How does
-                      your proposal meet these requirements?
-                      <span>(500 character maximum)</span><em>&#x2a;</em></label
-                    >
-                    <textarea
-                      id="firstAim"
-                      name="firstAim"
-                      required=""
-                      rows="4"
-                    ></textarea>
-                    <label for="secondAim"
-                      >The second aim of this open call is to commission
-                      unconventional ways, yet tangible experiences that invite
-                      the audience to discover, unfold and engage with the next
-                      stages of evolution; the project must include an
-                      interactive component in which the audience can discover,
-                      learn and grow in their own personal ways. How does your
-                      proposal meet these requirements?
-                      <span>(150 charecters maximum)</span
-                      ><em>&#x2a;</em></label
-                    >
-                    <textarea
-                      id="secondAim"
-                      name="secondAim"
-                      required=""
-                      rows="4"
-                    ></textarea>
-                    <label for="thirdAim"
-                      >The third aim of this open call is to commission
-                      innovative projects that apply methods, approaches or
-                      tools from (speculative) design and (bio)technology;
-                      machine learning; synthetic biology; biomimicry; robotics;
-                      etc. How does your proposal meet these requirements?
-                      <span> (500 character maximum)</span
-                      ><em>&#x2a;</em></label
-                    >
-                    <textarea
-                      id="thirdAim"
-                      name="thirdAim"
-                      required=""
-                      rows="4"
-                    ></textarea>
-                  </div>
-
-                  <div class="form-section">
-                    <h3>Previous Works</h3>
-                    <label for="cv"
-                      >Your CV. Please provide a downloadable link
-                      <span>(PDF only, 2 pages maximun)</span
-                      ><em>&#x2a;</em></label
-                    >
-                    <input id="cv" name="cv" required="" type="text" />
-                    <label for="workLink"
-                      >Previous works. Please provide a downloadable link
-                      <span>(PDF only, 10 pages maximun, less than 50MB)</span
-                      ><em>&#x2a;</em></label
-                    >
-                    <input
-                      id="workLink"
-                      name="workLink"
-                      required=""
-                      type="text"
-                    />
-                    <label for="website"
-                      >Your website <span>(if applicable)</span>
-                    </label>
-                    <input id="website" name="website" type="text" />
-                  </div>
-                  <button id="submit">SUBMIT</button>
-                </form>
-              </div>
-            </section>
+                    <div class="form-section">
+                      <h3>Previous Works</h3>
+                      <label for="cv"
+                        >Your CV. Please provide a downloadable link
+                        <span>(PDF only, 2 pages maximun)</span
+                        ><em>&#x2a;</em></label
+                      >
+                      <input id="cv" name="cv" required="" type="text" />
+                      <label for="workLink"
+                        >Previous works. Please provide a downloadable link
+                        <span>(PDF only, 10 pages maximun, less than 50MB)</span
+                        ><em>&#x2a;</em></label
+                      >
+                      <input
+                        id="workLink"
+                        name="workLink"
+                        required=""
+                        type="text"
+                      />
+                      <label for="website"
+                        >Your website <span>(if applicable)</span>
+                      </label>
+                      <input id="website" name="website" type="text" />
+                    </div>
+                    <button id="submit">SUBMIT</button>
+                  </form>
+                </div>
+              </section>
+            </div>
+            <!-- end section -->
           </div>
-          <!-- end section -->
         </div>
       </div>
       <!-- begin scrollable -->
