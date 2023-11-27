@@ -93,3 +93,21 @@ $(window).on("scroll", function () {
     timeline.removeClass("fixed");
   }
 });
+
+var images = document.getElementsByClassName("js-image");
+
+$(images).each(function (index) {
+  $(this).on("mousemove", function (event) {
+    this.style.webkitMaskPositionX = event.offsetX - 100 + "px";
+    this.style.webkitMaskPositionY = event.offsetY + 200 + "px";
+  });
+});
+
+// function mouseMove (event)
+// {
+//   console.log(event.target)
+//     var ele = document.getElementById ('test');
+
+//     ele.style.webkitMaskPositionX = event.offsetX - 100 + "px";
+//     ele.style.webkitMaskPositionY = event.offsetY + 200 + "px";
+// }

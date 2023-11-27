@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "parcel": "parcel",
-    "start": "npm run parcel -- index.html"
+    "start": "npm run parcel -- index.html --open"
   },
   "dependencies": {
     "@johh/three-effectcomposer": "^0.0.7",
