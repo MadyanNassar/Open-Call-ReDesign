@@ -180,7 +180,7 @@ img {
 
 .reveal {
   position: relative;
-  opacity: 0;
+  opacity: 1;
   text-align: left;
 }
 

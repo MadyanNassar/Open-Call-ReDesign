@@ -200,7 +200,7 @@ export default class Sketch {
         uMouse: { value: new THREE.Vector2(-10, -10) },
         uVelo: { value: 0 },
         uScale: { value: 0 },
-        uType: { value: 1 },
+        uType: { value: 1 }, // here change effect
         time: { value: 0 },
       },
       vertexShader: postvertex,
