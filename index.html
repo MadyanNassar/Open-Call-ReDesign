@@ -9,12 +9,14 @@
       name="keywords"
       content="three.js, webgl, hover, image, effect, website, web development"
     />
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <meta name="author" content="Codrops" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <link rel="stylesheet" type="text/css" href="css/base.css" />
-    <!-- <script type="module" src="js/script.js"></script> -->
+    <script type="module" src="js/script.js"></script>
     <script type="module" src="js/timeline.js"></script>
+    <script src="js/gsap.js"></script>
     <script>
       document.documentElement.className = "js";
       var supportsCssVars = function () {
@@ -40,11 +42,9 @@
   </head>
 
   <body class="loading">
-    <!-- <div class="timeline-wrapper"> -->
     <ul class="timeline">
       <li class="bar"></li>
     </ul>
-    <!-- </div> -->
     <main>
       <div data-scroll>
         <div class="head-wrapper">
@@ -53,14 +53,41 @@
           </video>
           <div class="item head">
             <div class="item__image">
-              <img src="img/title.svg" class="js-image" alt="Some image" />
+              <img
+                src="img/NextNature_logo.svg"
+                class="logo-img"
+                alt="Some image"
+              />
+              <img
+                src="img/Title_A_Open_call_1.svg"
+                class="title-img title-img"
+                alt="Some image"
+              />
+              <img
+                src="img/Spaceship.svg"
+                class="js-image canvas-img"
+                alt="Some image"
+              />
             </div>
           </div>
         </div>
-
-        <div class="content">
-          <div class="body-container">
-            <div class="section spaced container">
+        <div class="body-container">
+          <div class="content">
+            <div class="content-info">
+              <div class="content-info-item">
+                <h1>31 MARCH 2023</h1>
+                <p>Deadline ( 23.59 CET)</p>
+              </div>
+              <div class="content-info-item">
+                <h1>25.000 EUR</h1>
+                <p>Development fee</p>
+              </div>
+              <div class="content-info-item">
+                <h1>6 MONTHS</h1>
+                <p>Timeframe</p>
+              </div>
+            </div>
+            <div class="container">
               <section data-name="open-call">
                 <div class="open-call">
                   with the open call
@@ -90,7 +117,7 @@
               </section>
 
               <section data-name="WHO CAN">
-                <h2 class="reveal fade-bottom">WHO CAN</h2>
+                <h2 class="reveal fade-bottom">WHO CAN APPLY</h2>
                 <p class="text reveal fade-bottom">
                   Artists, designers, and visual storyteller with keen interest
                   in socio-cultural implications of technology, who graduated in
@@ -107,85 +134,119 @@
               </section>
 
               <section data-name="WHAT TO">
-                <h2 class="reveal fade-bottom">WHAT TO</h2>
-                <p class="text reveal fade-bottom">
-                  Each participant can submit only one application for this
-                  call. The application consist of:
-                </p>
-                <p class="text text-left reveal fade-bottom">
-                  - Completed & signed application form including project idea.
-                </p>
-                <p class="text text-left reveal fade-bottom">
-                  - Curriculum Viate (CV).
-                </p>
-                <p class="text text-left reveal fade-bottom">
-                  - Portfolio of previous work (max 20 slides).
-                </p>
-              </section>
+                <h2 class="reveal fade-bottom">WHAT TO SUBMIT</h2>
+                <div class="numbers">
+                  <div class="number-item reveal fade-left">
+                    <div class="circle">
+                      <p>1</p>
+                    </div>
+                    <p class="number-text">
+                      Completed & signed<br />
+                      application form<br />
+                      including project idea.
+                    </p>
+                  </div>
 
-              <section data-name="UPLOAD">
-                <h2 class="reveal fade-bottom">UPLOAD</h2>
-                <p class="text reveal fade-bottom">
-                  Upload PDF files of your completed application form, your CV
-                  and portfolio You can convert Word documents with a PDF
-                  converter The maximum file size for each of these individual
-                  files cannot be exceed 4MB.
-                </p>
-                <p class="text reveal fade-bottom">
-                  If you did not receive a confirmation by email (even though on
-                  the website it state your application was successful), it's
-                  likely an error occurred. If so, please contact us via
-                  opencall@nextnature.net.
-                </p>
-                <p class="text reveal fade-bottom">
-                  Development fee Four candidates / teams will be selected and
-                  receive a development fee of €25.000 each.
-                </p>
+                  <div class="number-item reveal fade-bottom">
+                    <div class="circle">
+                      <p>2</p>
+                    </div>
+                    <p class="number-text">Curriculum Viate (CV)</p>
+                  </div>
+
+                  <div class="number-item reveal fade-right">
+                    <div class="circle">
+                      <p>3</p>
+                    </div>
+                    <p class="number-text">
+                      Portfolio of previous work (max 20 slides)
+                    </p>
+                  </div>
+                </div>
+
+                <div class="what-to-desc">
+                  <p class="text reveal fade-bottom">
+                    Upload PDF files of your completed application form, your CV
+                    and portfolio You can convert Word documents with a PDF
+                    converter The maximum file size for each of these individual
+                    files cannot be exceed 4MB.
+                  </p>
+                  <p class="text reveal fade-bottom">
+                    If you did not receive a confirmation by email (even though
+                    on the website it state your application was successful),
+                    it's likely an error occurred. If so, please contact us via
+                    opencall@nextnature.net.
+                  </p>
+                  <p class="text reveal fade-bottom">
+                    Development fee Four candidates / teams will be selected and
+                    receive a development fee of €25.000 each.
+                  </p>
+                </div>
               </section>
 
               <section data-name="TIMETABLE">
                 <h2 class="reveal fade-bottom">TIMETABLE</h2>
-                <h3 class="year reveal fade-bottom">2023</h3>
+                <img
+                  id="april"
+                  class="js-image month-svg"
+                  src="./img/2023.png"
+                />
                 <div class="list-container">
                   <div class="row reveal fade-right">
-                    <div class="empty"></div>
-                    <p class="box-calender">APRIL</p>
+                    <img
+                      id="april"
+                      class="js-image month-svg"
+                      src="./img/APRIL_1.png"
+                    />
                     <hr class="box-line" />
                     <p class="box-calender calender-decs">
-                      DeadLine - Submit your idea
+                      DeadLine <strong> Submit your idea</strong>
                     </p>
                   </div>
-                  <div class="row reveal fade-left">
+                  <div class="row reveal fade-right">
+                    <img
+                      id="may"
+                      class="js-image month-svg"
+                      src="./img/MAY_1.png"
+                    />
+                    <hr class="box-line" />
                     <p class="box-calender calender-decs">
                       Selected ideas will be announced
                     </p>
-                    <hr class="box-line" />
-                    <p class="box-calender">MAY</p>
-                    <div class="empty"></div>
                   </div>
                   <div class="row reveal fade-right">
-                    <div class="empty"></div>
-                    <p class="box-calender">JUNE</p>
+                    <img
+                      id="june"
+                      class="js-image month-svg"
+                      src="./img/JUNE_1.png"
+                    />
                     <hr class="box-line" />
-                    <p class="box-calender calender-decs">KickOff event</p>
+                    <p class="box-calender calender-decs">
+                      <strong>KickOff event</strong>
+                    </p>
                   </div>
 
-                  <div class="row reveal fade-left">
-                    <p class="box-calender calender-decs">
-                      First feedback round
-                    </p>
+                  <div class="row reveal fade-right">
+                    <img
+                      class="js-image month-svg"
+                      src="./img/SEPTEMBER_1.png"
+                    />
                     <hr class="box-line" />
-                    <p class="box-calender">SEPTEMBER</p>
-                    <div class="empty"></div>
+                    <p class="box-calender calender-decs">
+                      <strong>First feedback </strong> round
+                    </p>
                   </div>
 
-                  <div class="row reveal fade-left">
-                    <p class="box-calender calender-decs">
-                      Second feedback round
-                    </p>
+                  <div class="row reveal fade-right">
+                    <img
+                      id="december"
+                      class="js-image month-svg"
+                      src="./img/DECEMBER_1.png"
+                    />
                     <hr class="box-line" />
-                    <p class="box-calender">DECEMBER</p>
-                    <div class="empty"></div>
+                    <p class="box-calender calender-decs">
+                      <strong>Second feedback</strong> round
+                    </p>
                   </div>
                 </div>
               </section>
@@ -200,37 +261,49 @@
                   interaction with an audience, and application of technology.
                 </p>
 
-                <p
-                  style="margin-left: 1.5rem"
-                  class="text jury-sub-title reveal fade-bottom"
-                >
+                <h2 class="text jury-sub-title reveal fade-bottom">
                   The jury consist of :
-                </p>
-                <p class="text text-left reveal fade-bottom">
-                  - Rob van Hatuum
-                  <span class="jury-desc"
-                    >(chair) Chief Science Officer NEMO, VPRO TV maker</span
-                  >
-                </p>
+                </h2>
 
-                <p class="text text-left reveal fade-bottom">
-                  - Caroline Breunesse
-                  <span class="jury-desc"
-                    >Director of Exhibitions Naturalis</span
-                  >
-                </p>
+                <div class="jury-names">
+                  <div class="jury-names-item">
+                    <div>
+                      <h3 class="text text-left reveal fade-bottom">
+                        Rob van Hatuum
+                      </h3>
+                      <p class="jury-desc reveal fade-bottom">
+                        (chair) Chief Science Officer NEMO, VPRO TV maker
+                      </p>
+                    </div>
+                  </div>
 
-                <p class="text text-left reveal fade-bottom">
-                  - Lin-Lin Chen
-                  <span class="jury-desc">
-                    Design Professor and Dean Industrial Design Dept./ TU
-                    Eindhoven.</span
-                  >
-                </p>
+                  <div class="jury-names-item">
+                    <div>
+                      <h3 class="text text-left reveal fade-bottom">
+                        Caroline Breunesse
+                      </h3>
+                      <p class="jury-desc reveal fade-bottom">
+                        Director of Exhibitions Naturalis
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="jury-names-item">
+                    <div>
+                      <h3 class="text text-left reveal fade-bottom">
+                        Lin-Lin Chen
+                      </h3>
+                      <p class="jury-desc reveal fade-bottom">
+                        Design Professor and Dean Industrial Design Dept./ TU
+                        Eindhoven.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </section>
 
               <section data-name="SPECIAL">
-                <h2 class="reveal fade-bottom">SPECIAL</h2>
+                <h2 class="reveal fade-bottom">SPECIAL CONDITIONS</h2>
                 <p class="text reveal fade-bottom">
                   Special conditions that apply to the award :
                 </p>
@@ -259,13 +332,6 @@
                 </p>
               </section>
 
-              <section data-name="DEADLINE">
-                <h2 class="reveal fade-bottom">DEADLINE</h2>
-                <p class="text deadline-text reveal fade-bottom">
-                  Friday 31 March 2023 (deadline 23.59 CET)
-                </p>
-              </section>
-
               <section data-name="OBJECTIVES">
                 <h2 class="reveal fade-bottom">OBJECTIVES</h2>
                 <p class="text reveal fade-bottom">
@@ -280,185 +346,192 @@
                 </p>
               </section>
 
-              <section data-name="FORM">
-                <div class="contact-us reveal fade-bottom">
-                  <form action="#">
-                    <h2 style="color: white">Application Form</h2>
-                    <div class="form-section">
-                      <label for="firstName">First Name<em>&#x2a;</em></label>
+              <div class="content-info">
+                <div class="content-info-item">
+                  <h1 class="reveal fade-left">31 MARCH 2023</h1>
+                  <p class="reveal fade-left">Deadline ( 23.59 CET)</p>
+                </div>
+                <div class="content-info-item">
+                  <h1 class="reveal fade-bottom">25.000 EUR</h1>
+                  <p class="reveal fade-bottom">Development fee</p>
+                </div>
+                <div class="content-info-item">
+                  <h1 class="reveal fade-right">6 MONTHS</h1>
+                  <p class="reveal fade-right">Timeframe</p>
+                </div>
+              </div>
+            </div>
+
+            <section class="form-div" id="form-div" data-name="FORM">
+              <div class="contact-us fade-bottom">
+                <form action="#">
+                  <h2 style="color: #fff; font-size: 5.4rem; padding: 1rem 0">
+                    Application Form
+                  </h2>
+                  <div class="form-section">
+                    <label for="firstName">First Name<em>&#x2a;</em></label>
+                    <input
+                      id="firstName"
+                      name="firstName"
+                      required=""
+                      type="text"
+                    />
+
+                    <label for="lastName">Last Name<em>&#x2a;</em></label>
+                    <input
+                      id="lastName"
+                      name="lastName"
+                      required=""
+                      type="text"
+                    />
+
+                    <label for="nationality">Nationality<em>&#x2a;</em></label>
+                    <input
+                      id="nationality"
+                      name="nationality"
+                      required=""
+                      type="text"
+                    />
+
+                    <label for="age">Age<em>&#x2a;</em></label>
+                    <input id="age" name="age" required="" type="number" />
+
+                    <label for="email">Email Address<em>&#x2a;</em></label>
+                    <input id="email" name="email" required="" type="email" />
+                    <label for="phoneNo">Phone No.<em>&#x2a;</em></label>
+                    <input
+                      id="phoneNo"
+                      name="phoneNo"
+                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                      type="tel"
+                    />
+                    <div style="margin-top: 2.5rem">
+                      <label for="workTitle"
+                        >Working title of project idea<em>&#x2a;</em></label
+                      >
                       <input
-                        id="firstName"
-                        name="firstName"
+                        id="workTitle"
+                        name="workTitle"
                         required=""
                         type="text"
                       />
-
-                      <label for="lastName">Last Name<em>&#x2a;</em></label>
-                      <input
-                        id="lastName"
-                        name="lastName"
-                        required=""
-                        type="text"
-                      />
-
-                      <label for="nationality"
-                        >Nationality<em>&#x2a;</em></label
-                      >
-                      <input
-                        id="nationality"
-                        name="nationality"
-                        required=""
-                        type="text"
-                      />
-
-                      <label for="age">Age<em>&#x2a;</em></label>
-                      <input id="age" name="age" required="" type="number" />
-
-                      <label for="email">Email Address<em>&#x2a;</em></label>
-                      <input id="email" name="email" required="" type="email" />
-                      <label for="phoneNo">Phone No.<em>&#x2a;</em></label>
-                      <input
-                        id="phoneNo"
-                        name="phoneNo"
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                        type="tel"
-                      />
-
-                      <div style="margin-top: 2.5rem">
-                        <label for="workTitle"
-                          >Working title of project idea<em>&#x2a;</em></label
-                        >
-                        <input
-                          id="workTitle"
-                          name="workTitle"
-                          required=""
-                          type="text"
-                        />
-                        <label for="workDescription"
-                          >One-sentence description of the work
-                          <span>(150 charecters maximum)</span
-                          ><em>&#x2a;</em></label
-                        >
-                        <textarea
-                          id="workDescription"
-                          name="workDescription"
-                          required=""
-                          rows="4"
-                        ></textarea>
-                      </div>
-                    </div>
-
-                    <div class="form-section">
-                      <h3>Project Details</h3>
-                      <label for="projectDetails"
-                        >Project description
-                        <span
-                          >(500 character maximum, please describe in detail of
-                          the proposed project sample)</span
-                        ><em>&#x2a;</em></label
-                      >
-                      <textarea
-                        id="projectDetails"
-                        name="projectDetails"
-                        required=""
-                        rows="4"
-                      ></textarea>
-                      <label for="projectMeaningful"
-                        >Why do you consider this project to be a meaningful
-                        project for Spaceship Earth?
-                        <span> (500 character maximum)</span
-                        ><em>&#x2a;</em></label
-                      >
-                      <textarea
-                        id="projectMeaningful"
-                        name="projectMeaningful"
-                        required=""
-                        rows="4"
-                      ></textarea>
-                      <label for="firstAim"
-                        >The first aim of this open call is to commission works
-                        that demonstrate a clear link to either the geosphere,
-                        the biosphere, the technosphere or the mindsphere. How
-                        does your proposal meet these requirements?
-                        <span>(500 character maximum)</span
-                        ><em>&#x2a;</em></label
-                      >
-                      <textarea
-                        id="firstAim"
-                        name="firstAim"
-                        required=""
-                        rows="4"
-                      ></textarea>
-                      <label for="secondAim"
-                        >The second aim of this open call is to commission
-                        unconventional ways, yet tangible experiences that
-                        invite the audience to discover, unfold and engage with
-                        the next stages of evolution; the project must include
-                        an interactive component in which the audience can
-                        discover, learn and grow in their own personal ways. How
-                        does your proposal meet these requirements?
+                      <label for="workDescription"
+                        >One-sentence description of the work
                         <span>(150 charecters maximum)</span
                         ><em>&#x2a;</em></label
                       >
                       <textarea
-                        id="secondAim"
-                        name="secondAim"
-                        required=""
-                        rows="4"
-                      ></textarea>
-                      <label for="thirdAim"
-                        >The third aim of this open call is to commission
-                        innovative projects that apply methods, approaches or
-                        tools from (speculative) design and (bio)technology;
-                        machine learning; synthetic biology; biomimicry;
-                        robotics; etc. How does your proposal meet these
-                        requirements? <span> (500 character maximum)</span
-                        ><em>&#x2a;</em></label
-                      >
-                      <textarea
-                        id="thirdAim"
-                        name="thirdAim"
+                        id="workDescription"
+                        name="workDescription"
                         required=""
                         rows="4"
                       ></textarea>
                     </div>
-
-                    <div class="form-section">
-                      <h3>Previous Works</h3>
-                      <label for="cv"
-                        >Your CV. Please provide a downloadable link
-                        <span>(PDF only, 2 pages maximun)</span
-                        ><em>&#x2a;</em></label
-                      >
-                      <input id="cv" name="cv" required="" type="text" />
-                      <label for="workLink"
-                        >Previous works. Please provide a downloadable link
-                        <span>(PDF only, 10 pages maximun, less than 50MB)</span
-                        ><em>&#x2a;</em></label
-                      >
-                      <input
-                        id="workLink"
-                        name="workLink"
-                        required=""
-                        type="text"
-                      />
-                      <label for="website"
-                        >Your website <span>(if applicable)</span>
-                      </label>
-                      <input id="website" name="website" type="text" />
-                    </div>
-                    <button id="submit">SUBMIT</button>
-                  </form>
-                </div>
-              </section>
-            </div>
-            <!-- end section -->
+                  </div>
+                  <div class="form-section">
+                    <h3>Project Details</h3>
+                    <label for="projectDetails"
+                      >Project description
+                      <span
+                        >(500 character maximum, please describe in detail of
+                        the proposed project sample)</span
+                      ><em>&#x2a;</em></label
+                    >
+                    <textarea
+                      id="projectDetails"
+                      name="projectDetails"
+                      required=""
+                      rows="4"
+                    ></textarea>
+                    <label for="projectMeaningful"
+                      >Why do you consider this project to be a meaningful
+                      project for Spaceship Earth?
+                      <span> (500 character maximum)</span
+                      ><em>&#x2a;</em></label
+                    >
+                    <textarea
+                      id="projectMeaningful"
+                      name="projectMeaningful"
+                      required=""
+                      rows="4"
+                    ></textarea>
+                    <label for="firstAim"
+                      >The first aim of this open call is to commission works
+                      that demonstrate a clear link to either the geosphere, the
+                      biosphere, the technosphere or the mindsphere. How does
+                      your proposal meet these requirements?
+                      <span>(500 character maximum)</span><em>&#x2a;</em></label
+                    >
+                    <textarea
+                      id="firstAim"
+                      name="firstAim"
+                      required=""
+                      rows="4"
+                    ></textarea>
+                    <label for="secondAim"
+                      >The second aim of this open call is to commission
+                      unconventional ways, yet tangible experiences that invite
+                      the audience to discover, unfold and engage with the next
+                      stages of evolution; the project must include an
+                      interactive component in which the audience can discover,
+                      learn and grow in their own personal ways. How does your
+                      proposal meet these requirements?
+                      <span>(150 charecters maximum)</span
+                      ><em>&#x2a;</em></label
+                    >
+                    <textarea
+                      id="secondAim"
+                      name="secondAim"
+                      required=""
+                      rows="4"
+                    ></textarea>
+                    <label for="thirdAim"
+                      >The third aim of this open call is to commission
+                      innovative projects that apply methods, approaches or
+                      tools from (speculative) design and (bio)technology;
+                      machine learning; synthetic biology; biomimicry; robotics;
+                      etc. How does your proposal meet these requirements?
+                      <span> (500 character maximum)</span
+                      ><em>&#x2a;</em></label
+                    >
+                    <textarea
+                      id="thirdAim"
+                      name="thirdAim"
+                      required=""
+                      rows="4"
+                    ></textarea>
+                  </div>
+                  <div class="form-section">
+                    <h3>Previous Works</h3>
+                    <label for="cv"
+                      >Your CV. Please provide a downloadable link
+                      <span>(PDF only, 2 pages maximun)</span
+                      ><em>&#x2a;</em></label
+                    >
+                    <input id="cv" name="cv" required="" type="text" />
+                    <label for="workLink"
+                      >Previous works. Please provide a downloadable link
+                      <span>(PDF only, 10 pages maximun, less than 50MB)</span
+                      ><em>&#x2a;</em></label
+                    >
+                    <input
+                      id="workLink"
+                      name="workLink"
+                      required=""
+                      type="text"
+                    />
+                    <label for="website"
+                      >Your website <span>(if applicable)</span>
+                    </label>
+                    <input id="website" name="website" type="text" />
+                  </div>
+                  <button id="submit">SUBMIT</button>
+                </form>
+              </div>
+            </section>
           </div>
         </div>
       </div>
-      <!-- begin scrollable -->
-
-      <!-- end scrollable -->
       <div id="container"></div>
     </main>
     <script type="module" src="js/app.js"></script>

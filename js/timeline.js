@@ -1,25 +1,22 @@
 $(function () {
+  function sumSection() {
+    return $(".container").height();
+  }
+
+  // function setSection() {
+  //   $.each($("section"), function (i, element) {
+  //     $(element).css({
+  //       "min-height": $(window).height() / 2,
+  //     });
+  //   });
+  // }
+
   function setDimensionBar() {
     $(".bar").css({
       // height: ($(window).height() / sumSection()) * 100 + "%",
       // height: (100 - $(this).top) + "%",
     });
   }
-  function setSection() {
-    $.each($("section"), function (i, element) {
-      $(element).css({
-        "min-height": $(window).height() * 2,
-      });
-    });
-  }
-
-  // $(".node").hover(function (e) {
-  //   $(this)
-  //   $(this).css(
-  //     "background-color",
-  //     e.type === "mouseenter" ? "red" : "transparent"
-  //   );
-  // });
 
   function addBehaviours() {
     let sections = $("section");
@@ -27,9 +24,7 @@ $(function () {
       $(element).on("click", function (e) {
         e.preventDefault();
         let scroll = $(sections[i]).offset().top;
-        console.log($(sections[i]).offset().top);
-        // console.log( $(('section' sections[i])).offset().top);
-
+        console.log(scroll);
         $("html, body").animate(
           {
             scrollTop: scroll,
@@ -49,10 +44,10 @@ $(function () {
       let name = $(element).data("name");
       let node = $("<li class='node'><span>" + name + "</span></li>");
       $(".timeline").append(node);
-
       $(node).css({
+        // top: i * 11.1111111111 + "%",
         top:
-          ($(".timeline").height() / $(".container").height()) *
+          ($(".timeline").height() / $(".body-container").height()) *
           $(element).offset().top,
       });
     });
@@ -77,17 +72,19 @@ $(document).ready(function () {
 });
 
 $(window).on("scroll", function () {
-  let top = (window.scrollY / $(".content").height()) * 100;
+  let top = (window.scrollY / $(".body-container").height()) * 100;
 
   var scroll = $(window).scrollTop();
   var timeline = $(".timeline");
-  var container = $(".body-container");
+  var container = $(".container");
+  var formDiv = $(".form-div");
   $(".bar").css({
     top: top + "%",
     height: 100 - top + "%",
   });
 
   if (scroll >= container.offset().top - 15) {
+    // && scroll + $(window).height() <= formDiv.offset().top
     timeline.addClass("fixed");
   } else {
     timeline.removeClass("fixed");

@@ -95,7 +95,6 @@ class Item {
         ) {
           this.shouldUnRoll = true;
         }
-        console.log(this.isVisible, "vis");
         this.mesh.visible = this.isVisible;
       });
     }, options);
@@ -202,9 +201,12 @@ class SmoothScroll {
       this.renderedStyles.translationY.previous < 10
     ) {
       this.shouldRender = true;
-      this.DOM.scrollable.style.transform = `translate3d(0,${
+      // this.DOM.scrollable.style.transform = `translate3d(0,${
+      //   -1 * this.renderedStyles.translationY.previous
+      // }px,0)`;
+      this.DOM.scrollable.style.transform = `translate(0,${
         -1 * this.renderedStyles.translationY.previous
-      }px,0)`;
+      }px)`;
       // console.log(this.items);
       for (const item of this.items) {
         // if the item is inside the viewport call it's render function

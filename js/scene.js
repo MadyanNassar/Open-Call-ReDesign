@@ -39,7 +39,7 @@ export default class Sketch {
 
     this.renderer.outputEncoding = THREE.sRGBEncoding;
     this.container = document.getElementById("container");
-    this.renderer.domElement.style.mixBlendMode = "difference";
+    this.renderer.domElement.style.mixBlendMode = "exclusion";
     this.container.appendChild(this.renderer.domElement);
 
     this.camera = new THREE.PerspectiveCamera(
@@ -200,7 +200,7 @@ export default class Sketch {
         uMouse: { value: new THREE.Vector2(-10, -10) },
         uVelo: { value: 0 },
         uScale: { value: 0 },
-        uType: { value: 1 }, // here change effect
+        uType: { value: 1 },
         time: { value: 0 },
       },
       vertexShader: postvertex,
