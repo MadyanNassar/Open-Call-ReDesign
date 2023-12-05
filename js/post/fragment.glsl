@@ -56,7 +56,7 @@ void main()	{
 	if(uType==1){
 		float c = circle(vUv, uMouse, 0.0, 0.2);
 		vec2 offsetVector = normalize(uMouse - vUv);
-		vec2 warpedUV = mix(vUv, uMouse, c * 5.99); //power
+		vec2 warpedUV = mix(vUv, uMouse, c * 1.99); //power
 		color = texture2D(tDiffuse,warpedUV) + texture2D(tDiffuse,warpedUV)*vec4(vec3(c),1.);
 	}
 

@@ -20,6 +20,22 @@ window.addEventListener("scroll", () => {
   reveal();
 });
 
+// timeline menu for mobile
+function toggleTheMenu() {
+  var menuBox = document.getElementById("menu-box");
+  if (menuBox.style.display == "block") {
+    // if is menuBox displayed, hide it
+    menuBox.style.display = "none";
+  } else {
+    // if is menuBox hidden, display it
+    menuBox.style.display = "block";
+  }
+}
+
+var menuList = document.getElementById("time-menu");
+
+menuList.addEventListener("click", () => toggleTheMenu());
+
 gsap.registerPlugin(ScrollTrigger);
 
 const growTl = gsap.timeline({

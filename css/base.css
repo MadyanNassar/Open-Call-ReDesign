@@ -35,6 +35,10 @@ body {
   gap: 5rem;
 }
 
+.time-menu {
+  display: none;
+  z-index: 0;
+}
 h1 {
   font-size: 56px;
   font-weight: 900;
@@ -105,7 +109,7 @@ img {
   border-radius: 5px;
   left: 8.5rem;
   top: 2rem;
-  width: 6px;
+  width: 7px;
   height: 90vh;
   background: rgb(255, 255, 255);
   z-index: 100;
@@ -421,6 +425,131 @@ section .jury-desc {
 }
 
 @media (max-width: 900px) {
+  .time-menu {
+    display: block !important;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 99 !important;
+  }
+
+  #menu-box {
+    list-style: none;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  #menu-box li {
+    margin-bottom: 8px;
+  }
+
+  #menu-box li:hover {
+    background-color: rgba(0, 0, 0, 1);
+  }
+
+  #menu-box li p {
+    color: white;
+  }
+
+  #menu {
+    float: right;
+  }
+
+  .timeline {
+    display: none !important;
+  }
+
+  .head-wrapper {
+    height: 50vh !important;
+  }
+  .container {
+    padding-left: 0;
+    padding: 1.5rem !important;
+  }
+
+  .menu-icon {
+    width: 30px;
+    height: 5px;
+    background-color: #000;
+    margin: 6px 0;
+  }
+
+  .body-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .content-info {
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem auto !important;
+  }
+
+  .content-info-item {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem !important;
+  }
+
+  .content-info-item h1,
+  .content-info-item p {
+    width: 100%;
+    text-align: left;
+  }
+
+  section {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: fit-content;
+    height: 100%;
+    margin-bottom: 3rem !important;
+  }
+
+  .numbers {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 5px;
+  }
+
+  .number-text br {
+    display: none;
+  }
+
+  .month-svg {
+    display: none !important;
+  }
+  .box-calender {
+    display: flex;
+    align-items: center;
+  }
+
+  .jury-names {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .jury-names-item div,
+  .jury-names-item div p,
+  .jury-names-item div h3 {
+    width: 100%;
+  }
+
+  form h2 {
+    font-size: 4rem !important;
+  }
+
+  .form-section {
+    width: 100% !important;
+  }
+  .contact-us {
+    padding: 1rem !important;
+    width: 100%;
+  }
   .back-ground {
     height: 20vh;
     width: 100%;
@@ -457,21 +586,18 @@ section .jury-desc {
   }
   .open-call {
     margin: 0.8rem auto;
-    width: 80%;
+    width: 100%;
     text-align: center;
-    font-size: medium;
+    font-size: large;
+    font-weight: 600;
+    text-align: justify;
   }
 
   .open-call span {
-    font-size: medium;
+    font-size: large;
   }
   .body-container {
     gap: 2rem;
-  }
-  section {
-    min-height: fit-content;
-    height: 100%;
-    margin-bottom: 1rem !important;
   }
   section .text,
   section .jury-desc {
@@ -489,7 +615,7 @@ section .jury-desc {
     font-size: small;
     padding: 1.5rem 0;
     height: 2rem;
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
   }
 }
 

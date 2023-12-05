@@ -36,6 +36,23 @@ $(function () {
         //  console.log(window.scrollY / sumSection() * 100)
       });
     });
+
+    $.each($(".timeline-menu-p"), function (i, element) {
+      $(element).on("click", function (e) {
+        e.preventDefault();
+        let scroll = $(sections[i]).offset().top;
+        console.log(scroll);
+        $("html, body").animate(
+          {
+            scrollTop: scroll,
+          },
+          500
+        );
+        // console.log(scroll);
+        // console.log($(".bar").offset().top);
+        //  console.log(window.scrollY / sumSection() * 100)
+      });
+    });
   }
 
   function arrangeNodes() {
@@ -43,7 +60,9 @@ $(function () {
     $.each($("section"), function (i, element) {
       let name = $(element).data("name");
       let node = $("<li class='node'><span>" + name + "</span></li>");
+      let p = $("<li class='timeline-menu-p'><p>" + name + "</p></li>");
       $(".timeline").append(node);
+      $("#menu-box").append(p);
       $(node).css({
         // top: i * 11.1111111111 + "%",
         top:
@@ -99,12 +118,3 @@ $(images).each(function (index) {
     this.style.webkitMaskPositionY = event.offsetY + 200 + "px";
   });
 });
-
-// function mouseMove (event)
-// {
-//   console.log(event.target)
-//     var ele = document.getElementById ('test');
-
-//     ele.style.webkitMaskPositionX = event.offsetX - 100 + "px";
-//     ele.style.webkitMaskPositionY = event.offsetY + 200 + "px";
-// }
