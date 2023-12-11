@@ -48,15 +48,13 @@ $(function () {
           },
           500
         );
-        // console.log(scroll);
-        // console.log($(".bar").offset().top);
-        //  console.log(window.scrollY / sumSection() * 100)
       });
     });
   }
 
   function arrangeNodes() {
     $(".node").remove();
+    $(".timeline-menu-p").remove();
     $.each($("section"), function (i, element) {
       let name = $(element).data("name");
       let node = $("<li class='node'><span>" + name + "</span></li>");
@@ -102,12 +100,14 @@ $(window).on("scroll", function () {
     height: 100 - top + "%",
   });
 
-  if (scroll >= container.offset().top - 15) {
-    // && scroll + $(window).height() <= formDiv.offset().top
-    timeline.addClass("fixed");
-  } else {
-    timeline.removeClass("fixed");
-  }
+  setTimeout(function () {
+    if (scroll >= container.offset().top - 15) {
+      // && scroll + $(window).height() <= formDiv.offset().top
+      timeline.addClass("fixed");
+    } else {
+      timeline.removeClass("fixed");
+    }
+  }, 200);
 });
 
 var images = document.getElementsByClassName("js-image");

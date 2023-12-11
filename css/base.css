@@ -59,6 +59,7 @@ img {
 
 .content {
   position: relative;
+  width: 100%;
 }
 
 .content-info {
@@ -75,6 +76,7 @@ img {
 .content-info-item {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -324,6 +326,7 @@ section:last-child {
 h1 {
   font-size: 3rem;
   margin: 20px;
+  text-align: center;
 }
 h2 {
   width: 100%;
@@ -425,6 +428,9 @@ section .jury-desc {
 }
 
 @media (max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+  }
   .time-menu {
     display: block !important;
     position: fixed;
@@ -522,6 +528,11 @@ section .jury-desc {
 
   .month-svg {
     display: none !important;
+  }
+
+  .month-text {
+    display: block !important;
+    font-weight: bold;
   }
   .box-calender {
     display: flex;
@@ -629,6 +640,12 @@ p {
   padding: 0 3rem 3rem 9rem;
 }
 
+.form-header {
+  color: #fff;
+  font-size: 5.4rem;
+  padding: 1rem 0;
+}
+
 #form-nav {
   width: 100%;
   margin-bottom: 2rem;
@@ -655,7 +672,7 @@ form input[type="tel"],
 form input[type="email"],
 form input[type="number"] {
   box-sizing: border-box;
-  padding-left: 1.5rem;
+  padding-left: 0.5rem;
 }
 
 input {
@@ -690,7 +707,7 @@ textarea:focus {
 
 textarea {
   resize: none;
-  padding-left: 1.5rem !important;
+  padding: 0.2rem 0.5rem !important;
 }
 
 button {
@@ -742,6 +759,9 @@ textarea:-webkit-autofill:focus {
     width: 100vw;
     overflow-x: hidden;
   }
+  .form-header {
+    font-size: 2.5rem !important;
+  }
   form .form-section {
     width: 75vw;
   }
@@ -756,6 +776,9 @@ textarea:-webkit-autofill:focus {
   textarea {
     font-size: 8pt;
     line-height: 14pt;
+  }
+  #submit {
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -945,6 +968,10 @@ video {
 }
 .month-svg {
   width: 50%;
+}
+
+.month-text {
+  display: none;
 }
 
 .month-row {

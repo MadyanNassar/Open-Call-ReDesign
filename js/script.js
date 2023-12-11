@@ -14,15 +14,22 @@ function reveal() {
   }
 }
 // To check the scroll position on page load
+
 reveal();
 
 window.addEventListener("scroll", () => {
+  setTimeout(function () {
+    reveal();
+  }, 200);
   reveal();
 });
 
 // timeline menu for mobile
+var menuBox = document.getElementById("menu-box");
+var menuList = document.getElementById("time-menu");
+var main = document.querySelector("main");
+
 function toggleTheMenu() {
-  var menuBox = document.getElementById("menu-box");
   if (menuBox.style.display == "block") {
     // if is menuBox displayed, hide it
     menuBox.style.display = "none";
@@ -32,9 +39,12 @@ function toggleTheMenu() {
   }
 }
 
-var menuList = document.getElementById("time-menu");
-
 menuList.addEventListener("click", () => toggleTheMenu());
+main.addEventListener("click", () => {
+  if (menuBox.style.display == "block") {
+    menuBox.style.display = "none";
+  }
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
