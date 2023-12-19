@@ -118,3 +118,12 @@ $(images).each(function (index) {
     this.style.webkitMaskPositionY = event.offsetY + 200 + "px";
   });
 });
+
+$(".scroll-down").click(function () {
+  $("html, body").animate(
+    { scrollTop: $(".body-container").offset().top + 10 },
+    "slow"
+  );
+  return false;
+});
+

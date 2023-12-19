@@ -103,7 +103,7 @@ img {
   border-radius: 5px;
   left: 8.5rem;
   top: 2rem;
-  width: 8px;
+  width: 9px;
   height: 90vh;
   background: rgb(255, 255, 255);
   z-index: 100;
@@ -189,6 +189,7 @@ img {
 
 .numbers {
   display: flex;
+  margin-top: 2rem;
 }
 
 .number-item {
@@ -284,6 +285,25 @@ img {
   }
 }
 
+.jury-names-item {
+  width: 40%;
+}
+
+.jury-content {
+  margin-bottom: 5rem;
+}
+
+.jury-names-item h3 {
+  width: 100% !important;
+  text-align: left;
+  font-size: x-large !important;
+  font-weight: 900 !important;
+}
+
+.p-sec {
+  margin-bottom: 2rem;
+}
+
 section {
   min-height: fit-content;
   width: 100%;
@@ -291,12 +311,11 @@ section {
   flex-direction: column;
   justify-content: center;
   padding: 0 5rem 0 4rem !important;
-  align-items: center;
-  gap: 1rem;
+  /* align-items: center; */
+  gap: 4rem;
   margin-bottom: 6rem !important;
   font-size: 16px;
   font-weight: 200;
-  font-family: "Montserrat";
   overflow: hidden;
 }
 
@@ -356,7 +375,7 @@ section .jury-sub-title {
 
 section .jury-desc {
   font-style: italic;
-  font-size: medium;
+  font-size: 24px;
 }
 
 .jury-names {
@@ -364,15 +383,16 @@ section .jury-desc {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.jury-names-item {
+/* .jury-names-item div {
   flex: 1;
-}
+} */
 
-.jury-names-item div {
-  width: 75%;
-}
+/* .jury-names-item div {
+  width: 50%;
+} */
 
 .time-table {
   width: 100%;
@@ -431,8 +451,13 @@ section .jury-desc {
 }
 
 @media (max-width: 900px) {
+  h2 {
+    font-size: xxx-large !important;
+    text-align: left !important;
+  }
   .canvas-img {
-    content: url("../img/1-mobile_text_OC.svg") !important;
+    width: 95%;
+    content: url("../img/2-mobile_text_OC.svg") !important;
     height: 50%;
   }
 
@@ -544,17 +569,21 @@ section .jury-desc {
     margin: 0 !important;
     min-height: fit-content;
     height: 100%;
-    margin-bottom: 3rem !important;
+    margin-bottom: 5rem !important;
+    gap: 2rem !important;
   }
 
+  .jury-names-item {
+    width: 100% !important;
+  }
   .numbers {
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 1px;
+    gap: 5px;
   }
 
   .number-text {
-    line-height: 1.3;
+    line-height: 1;
   }
 
   .number-text br {
@@ -572,7 +601,7 @@ section .jury-desc {
   .month-text {
     display: block !important;
     font-weight: bold;
-    font-size: x-large;
+    font-size: x-large !important;
   }
   .box-calender {
     display: flex;
@@ -650,13 +679,13 @@ section .jury-desc {
     margin: 0.8rem auto;
     width: 100%;
     text-align: center;
-    font-size: large;
+    /* font-size: large; */
     /* font-weight: 600; */
     text-align: left;
   }
 
   .open-call span {
-    font-size: large;
+    font-size: xx-large;
   }
   .body-container {
     gap: 2rem;
@@ -664,7 +693,7 @@ section .jury-desc {
   section .text,
   section .jury-desc {
     text-align: left;
-    font-size: small;
+    font-size: x-large;
     width: 100%;
   }
   .year {
@@ -674,15 +703,21 @@ section .jury-desc {
     width: 100%;
   }
   .box-calender {
-    font-size: small;
+    font-size: large;
     padding: 1.5rem 0;
-    height: 2rem;
+    height: 4rem;
     /* background-color: #eeeeee; */
   }
 }
 
-p {
-  line-height: 2;
+h3 {
+  font-size: xxx-large;
+  margin-bottom: .6rem;
+}
+
+p , ul li {
+  line-height: 1.2;
+  font-size: 24px;
 }
 
 /* Form Styling */
@@ -857,7 +892,7 @@ textarea:-webkit-autofill:focus {
   height: 60px;
   margin: -30px 0 0 -30px;
   border-radius: 50%;
-  opacity: 0.4;
+  opacity: 0;
   background: var(--color-link);
   animation: loaderAnim 0.7s linear infinite alternate forwards;
 }
@@ -918,12 +953,6 @@ img {
   justify-content: space-between;
 }
 
-.item img {
-  display: block;
-  width: 90%;
-  margin-top: 2rem;
-}
-
 .item__image {
   display: flex;
   flex-direction: column;
@@ -931,7 +960,7 @@ img {
   align-items: flex-start;
   margin-bottom: 1em;
   margin-left: 4rem;
-  gap: 4.5rem;
+  gap: 2.5rem;
   /* width: 100%; */
   height: 100%;
 }
@@ -964,8 +993,21 @@ img {
   }
 }
 
+.logos {
+  z-index: 99;
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  /* gap: 2.5rem; */
+}
+
+.logos a {
+  height: 100%;
+}
+
 .canvas-img {
   opacity: 1 !important;
+  margin-top: 2rem;
   /* margin-top: 2rem !important; */
   -webkit-mask-position: -20px -20px;
   -webkit-mask-size: 200px 400px;
@@ -974,6 +1016,94 @@ img {
     rgba(0, 0, 0, 0) 500px,
     rgba(0, 0, 0, 1) 500px
   );
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 3rem;
+  right: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.scroll-down:hover {
+  cursor: pointer;
+}
+
+.chevron {
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: #fff;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.text {
+  display: block;
+  margin-top: 75px;
+  /* margin-left: -30px; */
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-size: 12px;
+  /* color: #fff; */
+  /* text-transform: uppercase; */
+  /* white-space: nowrap; */
+  opacity: 0;
+  /* animation: pulse 2s linear alternate infinite; */
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
 }
 
 .head-wrapper {
@@ -1008,8 +1138,9 @@ video {
 
 .logo-img {
   margin-top: 2rem !important;
-  width: 5% !important;
+  width: 75% !important;
   z-index: 100 !important;
+  display: block;
 }
 
 .form-div {
