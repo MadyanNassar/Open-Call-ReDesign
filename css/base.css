@@ -25,6 +25,7 @@ body {
   font-family: "Helvetica", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e8e8e8;
 }
 
 .time-menu {
@@ -572,6 +573,10 @@ section .jury-desc {
     height: 100%;
     margin-bottom: 5rem !important;
     gap: 2rem !important;
+  }
+  
+  .logos {
+    width: 40% !important;
   }
 
   .jury-names-item {
