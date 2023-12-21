@@ -77,12 +77,20 @@
                     alt="Some image"
                 /></a>
               </div>
-
-              <img
-                src="img/desktop_header_text_OC.svg"
-                class="js-image canvas-img"
-                alt="Some image"
-              />
+              <div class="canvas-img-wrapper">
+                <img
+                  src="img/desktop_header_text_OC.svg"
+                  class="canvas-img"
+                  id="desktop"
+                  alt="Some image"
+                />
+                <img
+                  src="img/2-mobile_text_OC.svg"
+                  class="canvas-img"
+                  id="mobile"
+                  alt="Some image"
+                />
+              </div>
             </div>
           </div>
           <div class="scroll-down">
@@ -101,7 +109,7 @@
                 <p>Deadline ( 23.59 CET)</p>
               </div>
               <div class="content-info-item">
-                <h1>25.000 EUR</h1>
+                <h1>5.000 EUR</h1>
                 <p>Development fee</p>
               </div>
               <div class="content-info-item">
@@ -123,12 +131,9 @@
                 <div class="open-call reveal fade-bottom">
                   1- Thought-provoking ideas that demonstrate a clear link to
                   either the geosphere, the biosphere, the technosphere or the
-                  mindsphere. Project: New Evoluon
-                  <span
-                    >(This links to
-                    <a href="https://nextnature.net/projects/new-evoluon"
-                      >new-evoluon</a
-                    >)</span
+                  mindsphere. Project:
+                  <a href="https://nextnature.net/projects/new-evoluon"
+                    >New Evoluon</a
                   >.
                 </div>
                 <div class="open-call reveal fade-bottom">
@@ -228,7 +233,7 @@
                     <img
                       id="april"
                       class="js-image month-svg"
-                      src="./img/APRIL_1.png"
+                      src="./img/MARCH.svg"
                     />
                     <p class="month-text">MARCH</p>
                     <hr class="box-line" />
@@ -548,7 +553,9 @@
                   </p>
                 </div>
                 <div>
-                  <h3 class="reveal fade-bottom">About the Next Nature in the Evoluon</h3>
+                  <h3 class="reveal fade-bottom">
+                    About the Next Nature in the Evoluon
+                  </h3>
                   <p class="p-sec reveal fade-bottom">
                     Since 1 January 2022, Next Nature has landed in the iconic
                     monument in Eindhoven. Over the next ten years, Next Nature
@@ -577,7 +584,7 @@
                   <p class="reveal fade-left">Deadline ( 23.59 CET)</p>
                 </div>
                 <div class="content-info-item">
-                  <h1 class="reveal fade-bottom">25.000 EUR</h1>
+                  <h1 class="reveal fade-bottom">5.000 EUR</h1>
                   <p class="reveal fade-bottom">Development fee</p>
                 </div>
                 <div class="content-info-item">
@@ -756,6 +763,23 @@
       </div>
       <div id="container"></div>
     </main>
+    <!-- <script>
+      const headerImg = document.getElementById("canvas-img");
+
+      window.addEventListener("resize", () => {
+      // headerImg.classList.remove("js-image");
+      if (window.innerWidth < 900) {
+        console.log(window.innerHeight);
+        console.log(window.innerWidth);
+        headerImg.style.backgroundImage = "url(2-mobile_text_OC.svg)";
+      } else {
+        headerImg.style.backgroundImage = "url(desktop_header_text_OC.svg)";
+      }
+      console.log(headerImg);
+
+      });
+
+    </script> -->
     <script type="module" src="js/app.js"></script>
   </body>
 </html>

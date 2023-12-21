@@ -221,11 +221,11 @@ img {
 
 .number-text {
   flex: 4;
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 .number-img {
-  width: 25%;
+  width: 21%;
 }
 
 .what-to-desc {
@@ -326,9 +326,9 @@ section:last-child {
 
 .open-call {
   margin: 1rem auto;
-  width: 80%;
+  /* width: 80%; */
   text-align: left;
-  font-size: xx-large;
+  font-size: 24px;
   font-family: "Helvetica";
 }
 .open-call:first-child {
@@ -447,7 +447,7 @@ section .jury-desc {
 
 @media (min-height: 1000px) AND (max-width: 1400px) {
   .head-wrapper {
-    height: 100% !important;
+    /* height: 100% !important; */
   }
 }
 
@@ -585,11 +585,12 @@ section .jury-desc {
   .numbers {
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 5px;
+    gap: 12px;
   }
 
   .number-text {
     line-height: 1;
+    font-size: 18px !important;
   }
 
   .number-text br {
@@ -597,7 +598,7 @@ section .jury-desc {
   }
 
   .number-img {
-    width: 15%;
+    width: 12%;
   }
 
   .month-svg {
@@ -683,7 +684,7 @@ section .jury-desc {
     margin: 0.8rem auto;
     width: 100%;
     text-align: center;
-    font-size: x-large;
+    font-size: 20px;
     /* font-weight: 600; */
     text-align: left;
   }
@@ -1020,7 +1021,15 @@ img {
   height: 100%;
 }
 
+.canvas-img-wrapper {
+  position: relative;
+  height: 100%;
+  width: 95%;
+}
+
 .canvas-img {
+  position: absolute;
+  top: 0;
   opacity: 1 !important;
   margin-top: 2rem;
   /* margin-top: 2rem !important; */
