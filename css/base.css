@@ -860,7 +860,8 @@ textarea:-webkit-autofill:focus {
     overflow-x: hidden;
   }
   .form-header {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
+    text-align: center !important;
   }
   form .form-section {
     width: 75vw;
