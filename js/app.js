@@ -1,8 +1,6 @@
 // import FontFaceObserver from "fontfaceobserver";
 import imagesLoaded from "imagesLoaded";
 import Scene from "./scene";
-import mobileImg from "../img/2-mobile_text_OC.svg";
-import desktopImg from "../img/desktop_header_text_OC.svg";
 
 const desktopHeaderImg = document.getElementById("desktop");
 const mobileHeaderImg = document.getElementById("mobile");
@@ -142,6 +140,12 @@ class Item {
 // SmoothScroll
 class SmoothScroll {
   constructor() {
+    if (window.innerWidth < 900) {
+      mobileHeaderImg.classList.add("js-image");
+    } else {
+      desktopHeaderImg.classList.add("js-image");
+    }
+    
     this.shouldRender = false;
     // the <main> element
     this.DOM = { main: document.querySelector("main") };
@@ -235,14 +239,6 @@ class SmoothScroll {
   }
 
   createItems() {
-    if (window.innerWidth < 900) {
-      mobileHeaderImg.style.backgroundImage = `url(${mobileImg})`;
-      mobileHeaderImg.classList.add("js-image");
-    } else {
-      desktopHeaderImg.style.backgroundImage = `url(${desktopImg})`;
-      desktopHeaderImg.classList.add("js-image");
-    }
-
     IMAGES.forEach((image) => {
       if (image.img.classList.contains("js-image")) {
         this.items.push(new Item(image, this));
