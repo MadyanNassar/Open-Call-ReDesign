@@ -20,7 +20,7 @@ reveal();
 window.addEventListener("scroll", () => {
   setTimeout(function () {
     reveal();
-  }, 200);
+  }, 1000);
   reveal();
 });
 
