@@ -1,9 +1,6 @@
 // import FontFaceObserver from "fontfaceobserver";
 import imagesLoaded from "imagesLoaded";
-import Scene from "./scene";
-
-const desktopHeaderImg = document.getElementById("desktop");
-const mobileHeaderImg = document.getElementById("mobile");
+import Scene from "./scene.js";
 
 const scene = new Scene("container");
 
@@ -103,7 +100,10 @@ class Item {
     }, options);
     this.observer.observe(this.DOM.el);
     // init/bind events
-    window.addEventListener("resize", () => this.resize());
+    window.addEventListener("resize", () => {
+      this.resize();
+      console.log("resize");
+    });
     this.render(0);
   }
 
@@ -120,10 +120,11 @@ class Item {
     this.width = bounds.width;
     this.height = bounds.height;
     this.left = bounds.left;
+    // console.log(this);
   }
   resize() {
     // on resize rest sizes and update the translation value
-    this.getSize();
+    // this.getSize();
     this.mesh.scale.set(this.width, this.height, 200);
     this.render(this.scroll.renderedStyles.translationY.current);
     this.scroll.shouldRender = true;
@@ -140,12 +141,6 @@ class Item {
 // SmoothScroll
 class SmoothScroll {
   constructor() {
-    if (window.innerWidth < 900) {
-      mobileHeaderImg.classList.add("js-image");
-    } else {
-      desktopHeaderImg.classList.add("js-image");
-    }
-    
     this.shouldRender = false;
     // the <main> element
     this.DOM = { main: document.querySelector("main") };
@@ -238,6 +233,10 @@ class SmoothScroll {
     body.style.height = `${this.DOM.scrollable.scrollHeight}px`;
   }
 
+  setConsole() {
+    console.log(this.items[0]);
+  }
+
   createItems() {
     IMAGES.forEach((image) => {
       if (image.img.classList.contains("js-image")) {
@@ -257,6 +256,7 @@ class SmoothScroll {
   initEvents() {
     // on resize reset the body's height
     window.addEventListener("resize", () => this.setSize());
+    body.addEventListener("click", () => this.setConsole());
   }
   render() {
     // update the current and interpolated values

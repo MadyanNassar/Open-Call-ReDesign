@@ -1,3 +1,11 @@
+import imagesLoaded from "imagesLoaded";
+
+const menuBox = document.getElementById("menu-box");
+const menuList = document.getElementById("time-menu");
+const main = document.querySelector("main");
+const desktopHeaderImg = document.getElementById("desktop");
+const mobileHeaderImg = document.getElementById("mobile");
+
 function reveal() {
   const reveals = document.querySelectorAll(".reveal");
 
@@ -25,9 +33,6 @@ window.addEventListener("scroll", () => {
 });
 
 // timeline menu for mobile
-var menuBox = document.getElementById("menu-box");
-var menuList = document.getElementById("time-menu");
-var main = document.querySelector("main");
 
 function toggleTheMenu() {
   if (menuBox.style.display == "block") {
@@ -60,4 +65,63 @@ const growTl = gsap.timeline({
 growTl.to("#form-div", {
   duration: 10,
   scale: 1,
+});
+
+window.onresize = function () {
+  if (window.innerWidth > window.innerHeight) {
+    location.reload();
+  }
+};
+
+if (window.innerWidth < 900) {
+  mobileHeaderImg.classList.add("js-image");
+} else {
+  desktopHeaderImg.classList.add("js-image");
+}
+
+// window.onload = function () {
+//   const script = document.createElement("script");
+//   // script.type = "module";
+//   script.async = true;
+//   // script.src = "js-mobile.js";
+//   document.body.appendChild(script);
+// };
+
+/***********************************/
+/********** Preloading **********/
+// Preload images
+let IMAGES;
+
+let docScroll;
+const getPageYScroll = () =>
+  (docScroll = window.pageYOffset || document.documentElement.scrollTop);
+window.addEventListener("scroll", getPageYScroll);
+
+const preloadImages = new Promise((resolve, reject) => {
+  imagesLoaded(document.querySelectorAll("img"), { background: true }, resolve);
+});
+
+preloadImages.then((images) => {
+  IMAGES = images.images;
+});
+
+// And then..
+Promise.all([preloadImages]).then(() => {
+  document.body.classList.remove("loading");
+  document.body.classList.add("loaded");
+  getPageYScroll();
+
+  // Initialize the Smooth Scrolling
+  if (window.innerWidth > 900) {
+    // getPageYScroll();
+    import("./js-desktop.js").then((scroll) => {
+      console.log("desktop");
+      new scroll.default(IMAGES, docScroll);
+    });
+  } else {
+    import("./js-mobile.js").then((scroll) => {
+      console.log("mobile");
+      new scroll.default(IMAGES);
+    });
+  }
 });
