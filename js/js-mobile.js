@@ -1,4 +1,3 @@
-import imagesLoaded from "imagesLoaded";
 import Scene from "./scene.js";
 
 const scene = new Scene("container");

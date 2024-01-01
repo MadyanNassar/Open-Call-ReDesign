@@ -1,5 +1,3 @@
-// import FontFaceObserver from "fontfaceobserver";
-import imagesLoaded from "imagesLoaded";
 import Scene from "./scene.js";
 
 const scene = new Scene("container");
@@ -232,9 +230,9 @@ export default class SmoothScroll {
     body.style.height = `${this.DOM.scrollable.scrollHeight}px`;
   }
 
-  setConsole() {
-    console.log(this.items[0]);
-  }
+  // setConsole() {
+  //   console.log(this.items[0]);
+  // }
 
   createItems(IMAGES) {
     IMAGES.forEach((image) => {
@@ -255,7 +253,7 @@ export default class SmoothScroll {
   initEvents() {
     // on resize reset the body's height
     window.addEventListener("resize", () => this.setSize());
-    body.addEventListener("click", () => this.setConsole());
+    // body.addEventListener("click", () => this.setConsole());
   }
   render() {
     // update the current and interpolated values
